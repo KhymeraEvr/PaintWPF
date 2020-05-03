@@ -1,0 +1,11 @@
+
+.vs/
+.vs/Mainpaint/v16/Server/sqlite3/storage.ide-shm
+.vs/Mainpaint/v16/Server/sqlite3/storage.ide
+.vs/Mainpaint/v16/Server/sqlite3/db.lock
+.vs/Mainpaint/v16/.suo
+.vs/Mainpaint/v16/.suo
+bin/
+obj\
+obj/x86/
+obj/

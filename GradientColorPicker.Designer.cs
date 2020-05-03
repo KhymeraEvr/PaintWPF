@@ -184,7 +184,6 @@
             // toolStripButton1
             // 
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::Mainpaint.Properties.Resources._new;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
@@ -194,7 +193,6 @@
             // toolStripButton2
             // 
             this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = global::Mainpaint.Properties.Resources.up;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
@@ -204,7 +202,6 @@
             // toolStripButton3
             // 
             this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = global::Mainpaint.Properties.Resources.down;
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
@@ -214,7 +211,6 @@
             // toolStripButton4
             // 
             this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = global::Mainpaint.Properties.Resources.close;
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
             this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
@@ -223,7 +219,6 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = global::Mainpaint.Properties.Resources.color_wheel_260x260;
             this.pictureBox5.Location = new System.Drawing.Point(234, 12);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(260, 260);
@@ -237,7 +232,6 @@
             // toolStripButton5
             // 
             this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = global::Mainpaint.Properties.Resources.copy1;
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Size = new System.Drawing.Size(23, 22);

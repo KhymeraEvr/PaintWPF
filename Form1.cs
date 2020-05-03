@@ -53,7 +53,6 @@ namespace Mainpaint
             pen1.DashPattern = new float[] { 4f, 2f, 2f, 3f };
             pen1_text.DashCap = DashCap.Round;
             pen1_text.DashPattern = new float[] { 4f, 2f, 3f, 4f };
-            textBox1.Parent = this;
             TIB = new TextInputBox(this);
             layerContainer1.AddLayer("Background", true);
             using (Graphics g = Graphics.FromImage(Space.Layers[1].LayerImage))
@@ -209,12 +208,10 @@ namespace Mainpaint
                 listBox1.Items.Add(style);
             }
             listBox1.Items.Add("Solid");
-            color_bmp = new Bitmap(pictureBox5.Image, new Size(260, 260));
 
             GraphicsPath gp = new GraphicsPath();
             gp.AddEllipse(0, 0, 260, 260);
             Region rg = new Region(gp);
-            pictureBox5.Region = rg;
 
             resizedImageSize = new Size(800, 600);
             panel3.AutoScroll = true;
@@ -229,15 +226,6 @@ namespace Mainpaint
 
         public void Message(string text, MessageType type, bool constant)
         {
-            switch (type)
-            {
-                case MessageType.Warning:
-                    toolStripStatusLabel1.Image = Mainpaint.Properties.Resources.warning;
-                    break;
-                case MessageType.Error:
-                    toolStripStatusLabel1.Image = Mainpaint.Properties.Resources.error;
-                    break;
-            }
             toolStripStatusLabel1.Text = text;
             toolStripStatusLabel1.Visible = true;
             if(!constant)
@@ -245,15 +233,6 @@ namespace Mainpaint
         }
         public void Message(string text, MessageType type)
         {
-            switch (type)
-            {
-                case MessageType.Warning:
-                    toolStripStatusLabel1.Image = Mainpaint.Properties.Resources.warning;
-                    break;
-                case MessageType.Error:
-                    toolStripStatusLabel1.Image = Mainpaint.Properties.Resources.error;
-                    break;
-            }
             toolStripStatusLabel1.Text = text;
             toolStripStatusLabel1.Visible = true;
             timer1.Enabled = true;
@@ -269,7 +248,6 @@ namespace Mainpaint
             {
                 CPoint = new Point(e.X, e.Y);
                 rulerLoc = new Point(e.X + pictureBox1.Left, e.Y + (pictureBox1.Top - 30));
-                pictureBox7.Invalidate(); pictureBox8.Invalidate();
                 DrawUpdater();
             }
             if (e.Button == System.Windows.Forms.MouseButtons.Middle)
@@ -733,26 +711,6 @@ namespace Mainpaint
 
         #region form_controls_1
 
-        private void listBox1_SelectedValueChanged(object sender, EventArgs e)
-        {
-            Graphics g = panel2.CreateGraphics();
-            g.Clear(Color.White);
-            HatchStyle style;
-            if (Enum.TryParse<HatchStyle>(listBox1.SelectedItem.ToString(), out style))
-            {
-                HatchBrush hb = new HatchBrush(style, Color.Red, Color.White);
-                g.FillRectangle(hb, panel2.ClientRectangle);
-                mainBrush = new HatchBrush(style, _ForeColor, _BackColor);
-            }
-            else if (listBox1.SelectedItem.ToString() == "Solid")
-            {
-                SolidBrush sb = new SolidBrush(Color.Red);
-                g.FillRectangle(sb, panel2.ClientRectangle);
-                mainBrush = new SolidBrush(_ForeColor);
-            }
-            g.Dispose();
-        }
-
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             Color temp = _ForeColor;
@@ -908,7 +866,6 @@ namespace Mainpaint
         private void Measure_Click(object sender, EventArgs e)
         {
             DeselectAll();
-            Measure.Checked = true;
             currentTool = DrawingSpace.Tool.Measure;
         }
 
@@ -1317,7 +1274,6 @@ namespace Mainpaint
                 {
                      Message(ex.Message, Form1.MessageType.Error);
                 }
-                pictureBox5.Invalidate();
             }
         }
 
@@ -1365,10 +1321,6 @@ namespace Mainpaint
         {
             if (GCP.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                Graphics gsp = pictureBox6.CreateGraphics();
-                gsp.FillRectangle(GCP.GradientBrush, pictureBox6.ClientRectangle);
-                gsp.Dispose();
-
                 GI = new GradientInformation();
                 GI.positions = GCP.Positions;
                 GI.type = GCP.GType;
@@ -1379,7 +1331,6 @@ namespace Mainpaint
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             DeselectAll();
-            toolStripButton1.Checked = true;
             currentTool = DrawingSpace.Tool.Gradient;
         }
 
@@ -1611,7 +1562,12 @@ namespace Mainpaint
             pxl.ShowDialog();
         }
 
-        private void stainedGlassToolStripMenuItem_Click(object sender, EventArgs e)
+      private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+      {
+
+      }
+
+      private void stainedGlassToolStripMenuItem_Click(object sender, EventArgs e)
         {
             StainedGlass sg = new StainedGlass(this);
             sg.ShowDialog();
@@ -1666,44 +1622,7 @@ namespace Mainpaint
 
             DrawUpdater(true);
         }
-
-        private void pictureBox7_Paint(object sender, PaintEventArgs e)
-        {
-            Graphics g = e.Graphics;
-            for (int x = 30; x < pictureBox7.Width; x += 100)
-            {
-                g.DrawLine(new Pen(new SolidBrush(Color.Gray), 3.0f), new Point(x, 0), new Point(x, 20));
-            }
-            for (int x = 30; x < pictureBox7.Width; x += 50)
-            {
-                g.DrawLine(new Pen(new SolidBrush(Color.Gray), 2.0f), new Point(x, 0), new Point(x, 10));
-            }
-            for (int x = 30; x < pictureBox7.Width; x += 10)
-            {
-                g.DrawLine(new Pen(new SolidBrush(Color.Gray), 1.0f), new Point(x, 0), new Point(x, 5));
-            }
-
-            g.DrawLine(new Pen(new SolidBrush(Color.Red), 2.0f), new Point(rulerLoc.X, 0), new Point(rulerLoc.X, 10));
-        }
-
-        private void pictureBox8_Paint(object sender, PaintEventArgs e)
-        {
-            Graphics g = e.Graphics;
-            for (int x = 1; x < pictureBox8.Height; x += 100)
-            {
-                g.DrawLine(new Pen(new SolidBrush(Color.Gray), 3.0f), new Point(0, x), new Point(20, x));
-            }
-            for (int x = 1; x < pictureBox8.Height; x += 50)
-            {
-                g.DrawLine(new Pen(new SolidBrush(Color.Gray), 2.0f), new Point(0, x), new Point(10, x));
-            }
-            for (int x = 1; x < pictureBox8.Height; x += 10)
-            {
-                g.DrawLine(new Pen(new SolidBrush(Color.Gray), 1.0f), new Point(0, x), new Point(5, x));
-            }
-
-            g.DrawLine(new Pen(new SolidBrush(Color.Blue), 2.0f), new Point(0, rulerLoc.Y), new Point(10, rulerLoc.Y));
-        }
+  
 
         private void addNoiseToolStripMenuItem_Click(object sender, EventArgs e)
         {

@@ -48,7 +48,6 @@ namespace Mainpaint
             LayerContainer lc = (this.Parent != null) ? (LayerContainer)this.Parent.Parent : null;
             if (LayerVisible)
             {
-                pictureBox1.Image = Mainpaint.Properties.Resources.layer_visibility;
                 if (lc != null)
                 {
                     lc.MasterWindow.Space.LayerChangeVisibility(this.Text, true);

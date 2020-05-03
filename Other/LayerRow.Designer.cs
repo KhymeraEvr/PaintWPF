@@ -46,7 +46,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Mainpaint.Properties.Resources.layer_visibility;
             this.pictureBox1.Location = new System.Drawing.Point(5, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(20, 20);
