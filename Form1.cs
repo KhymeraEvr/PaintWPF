@@ -32,8 +32,6 @@ namespace Mainpaint
         FileDrag fd = new FileDrag();
         BrushType b_mode = BrushType.Circle_smooth;
         Bitmap color_bmp;
-        GradientColorPicker GCP;
-        GradientInformation GI;
         decimal difference = 1;
 
         public enum BrushType
@@ -59,7 +57,6 @@ namespace Mainpaint
             {
                 g.FillRectangle(new SolidBrush(Color.White), 0, 0, Space.Layers[1].LayerImage.Width, Space.Layers[1].LayerImage.Height);
             }
-            GCP = new GradientColorPicker();
         }
 
         #endregion
@@ -339,80 +336,6 @@ namespace Mainpaint
                                 textBox1.Focus();
                             }
                             break;
-                        case DrawingSpace.Tool.Gradient:
-
-                            try
-                            {
-                                if (GI.type == GradientType.Linear)
-                                {
-                                    float angle = (float)Math.Round(Math.Atan2(endP.Y - SLoc.Y, endP.X - SLoc.X) * 1000) / 1000;
-                                    LinearGradientBrush lgb = new LinearGradientBrush(new Rectangle(SLoc.X, SLoc.Y, endP.X - SLoc.X, endP.Y - SLoc.Y), Color.Black, Color.Black, angle);
-                                    ColorBlend cb = new ColorBlend();
-                                    cb.Positions = GI.positions;
-                                    cb.Colors = GI.colors.ToArray();
-                                    lgb.InterpolationColors = cb;
-
-                                    using (Graphics gp = Graphics.FromImage(Space.SelectedLayerW.LayerImage))
-                                    {
-                                        gp.FillRectangle(lgb, new Rectangle(SLoc.X, SLoc.Y, endP.X - SLoc.X, endP.Y - SLoc.Y));
-                                    }
-                                    lgb.Dispose();
-
-                                }
-                                else if (GI.type == GradientType.Rectangular)
-                                {
-                                    GraphicsPath gp = new GraphicsPath();
-                                    gp.AddRectangle(new Rectangle(SLoc.X, SLoc.Y, endP.X - SLoc.X, endP.Y - SLoc.Y));
-
-                                    PathGradientBrush pgb = new PathGradientBrush(gp);
-                                    ColorBlend cb = new ColorBlend();
-                                    cb.Positions = GI.positions;
-                                    cb.Colors = GI.colors.ToArray();
-                                    pgb.InterpolationColors = cb;
-
-                                    using (Graphics gp1 = Graphics.FromImage(Space.SelectedLayerW.LayerImage))
-                                    {
-                                        gp1.FillRectangle(pgb, new Rectangle(SLoc.X, SLoc.Y, endP.X - SLoc.X, endP.Y - SLoc.Y));
-                                    }
-
-                                    pgb.Dispose();
-                                }
-                                else if(GI.type == GradientType.Circular)
-                                {
-
-                                    GraphicsPath gp = new GraphicsPath();
-                                    gp.AddEllipse(new Rectangle(SLoc.X, SLoc.Y, endP.X - SLoc.X, endP.Y - SLoc.Y));
-                                    PathGradientBrush pgb = new PathGradientBrush(gp);
-                                    ColorBlend cb = new ColorBlend();
-                                    cb.Positions = GI.positions;
-                                    cb.Colors = GI.colors.ToArray();
-                                    pgb.InterpolationColors = cb;
-
-                                    using (Graphics gp1 = Graphics.FromImage(Space.SelectedLayerW.LayerImage))
-                                    {
-                                        gp1.FillEllipse(pgb, new Rectangle(SLoc.X, SLoc.Y, endP.X - SLoc.X, endP.Y - SLoc.Y));
-                                    }
-
-                                    pgb.Dispose();
-
-                                }
-                            }
-                            catch (Exception ex)
-                            {
-                                Message(ex.Message, MessageType.Error);
-                            }
-                            break;
-                        case DrawingSpace.Tool.RectSelect:
-                            if (e.X - SLoc.X <= 3 && e.Y - SLoc.Y <= 3)
-                            {
-                                WorkingSpace = Rectangle.Empty; RescaledWorkingSpace = Rectangle.Empty;
-                            }
-                            else
-                            {
-                                WorkingSpace = new Rectangle(SLoc.X, SLoc.Y, e.X - SLoc.X, e.Y - SLoc.Y);
-                                RescaledWorkingSpace = WorkingSpace;
-                            }
-                            break;
                     }
                     ds.DrawnData();
                 }
@@ -605,58 +528,7 @@ namespace Mainpaint
                         g.DrawString("Length: " + lgth.ToString() + "px", new Font("Tahoma", 12.0f, FontStyle.Regular), new SolidBrush(Color.Red), new PointF(10, 10));
                         g.DrawLine(new Pen(new SolidBrush(Color.Blue)), SLoc, CPoint);
                         break;
-                    case DrawingSpace.Tool.Gradient:
-                        try
-                        {
-                            if (GI.type == GradientType.Linear)
-                            {
-                                float angle = (float)Math.Round(Math.Atan2(CPoint.Y - SLoc.Y, CPoint.X - SLoc.X) * 1000) / 1000;
-                                LinearGradientBrush lgb = new LinearGradientBrush(new Rectangle(SLoc.X, SLoc.Y, CPoint.X - SLoc.X, CPoint.Y - SLoc.Y), Color.Black, Color.Black, angle);
-                                ColorBlend cb = new ColorBlend();
-                                cb.Positions = GI.positions;
-                                cb.Colors = GI.colors.ToArray();
-                                lgb.InterpolationColors = cb;
-
-                                g.FillRectangle(lgb, new Rectangle(SLoc.X, SLoc.Y, CPoint.X - SLoc.X, CPoint.Y - SLoc.Y));
-
-                            }
-                            else if (GI.type == GradientType.Rectangular)
-                            {
-                                GraphicsPath gp = new GraphicsPath();
-                                gp.AddRectangle(new Rectangle(SLoc.X, SLoc.Y, CPoint.X - SLoc.X, CPoint.Y - SLoc.Y));
-
-                                PathGradientBrush pgb = new PathGradientBrush(gp);
-                                ColorBlend cb = new ColorBlend();
-                                cb.Positions = GI.positions;
-                                cb.Colors = GI.colors.ToArray();
-                                pgb.InterpolationColors = cb;
-
-                                g.FillRectangle(pgb, new Rectangle(SLoc.X, SLoc.Y, CPoint.X - SLoc.X, CPoint.Y - SLoc.Y));
-
-                                pgb.Dispose();
-                            }
-                            else if (GI.type == GradientType.Circular)
-                            {
-
-                                GraphicsPath gp = new GraphicsPath();
-                                gp.AddEllipse(new Rectangle(SLoc.X, SLoc.Y, CPoint.X - SLoc.X, CPoint.Y - SLoc.Y));
-                                PathGradientBrush pgb = new PathGradientBrush(gp);
-                                ColorBlend cb = new ColorBlend();
-                                cb.Positions = GI.positions;
-                                cb.Colors = GI.colors.ToArray();
-                                pgb.InterpolationColors = cb;
-
-                                g.FillRectangle(pgb, new Rectangle(SLoc.X, SLoc.Y, CPoint.X - SLoc.X, CPoint.Y - SLoc.Y));
-
-                                pgb.Dispose();
-
-                            }
-                        }
-                        catch (Exception exs)
-                        {
-                            Message(exs.Message, MessageType.Error);
-                        }
-                        break;
+                 
                     case DrawingSpace.Tool.RectSelect:
                         g.DrawRectangle(new Pen(new HatchBrush(HatchStyle.SmallCheckerBoard, Color.Blue, Color.Transparent)), new Rectangle(SLoc.X, SLoc.Y, CPoint.X - SLoc.X, CPoint.Y - SLoc.Y));
                         break;
@@ -1319,13 +1191,7 @@ namespace Mainpaint
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (GCP.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                GI = new GradientInformation();
-                GI.positions = GCP.Positions;
-                GI.type = GCP.GType;
-                GI.colors = GCP.Colors;
-            }
+
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
