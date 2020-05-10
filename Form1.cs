@@ -922,11 +922,6 @@ namespace Mainpaint
             ifr.ShowDialog();
         }
 
-        private void gaussianBlurToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            GaussianWindow gw = new GaussianWindow(this);
-            gw.ShowDialog();
-        }
 
         private void grayscaleToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1018,12 +1013,6 @@ namespace Mainpaint
         {
             Median md = new Median(this);
             md.ShowDialog();
-        }
-
-        private void gradientDetectionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            GradientDetect gd = new GradientDetect(this);
-            gd.ShowDialog();
         }
 
         private void makeBitonalToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1416,29 +1405,6 @@ namespace Mainpaint
             DrawUpdater(true);
         }
 
-        private void pixelateToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            Pixelate pxl = new Pixelate(this);
-            pxl.ShowDialog();
-        }
-
-        private void pixelDistortToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            PixelDistort pxl = new PixelDistort(this);
-            pxl.ShowDialog();
-        }
-
-      private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-      {
-
-      }
-
-      private void stainedGlassToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            StainedGlass sg = new StainedGlass(this);
-            sg.ShowDialog();
-        }
-
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             infoForm ifr = new infoForm();
@@ -1489,19 +1455,6 @@ namespace Mainpaint
             DrawUpdater(true);
         }
   
-
-        private void addNoiseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Noise ns = new Noise(this);
-            ns.ShowDialog();
-        }
-
-        private void addJitterToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            jitter jt = new jitter(this);
-            jt.ShowDialog();
-        }
-
         private void redEyeRemovalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (WorkingSpace != Rectangle.Empty)
@@ -1607,23 +1560,6 @@ namespace Mainpaint
             }
 
             DrawUpdater(true);
-        }
-
-        private void oilPaintingToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OilPaint op = new OilPaint(this);
-            op.ShowDialog();
-        }
-
-        private void pencilDrawingToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cartoonEffectToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CartoonFilter cf = new CartoonFilter(this);
-            cf.ShowDialog();
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)

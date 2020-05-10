@@ -8,14 +8,14 @@
     <framework targetVersion="4.0" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Mainpaint.exe.manifest" size="3227">
+    <dependentAssembly dependencyType="install" codebase="Mainpaint.exe.manifest" size="3045">
       <assemblyIdentity name="Mainpaint.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>OrHqo0xRh+N8yEdMHMt+E3K3A+Q=</dsig:DigestValue>
+        <dsig:DigestValue>5mu3P+5BSaWv4f6pA3Ex3y5hf5E=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
