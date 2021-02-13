@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Mainpaint.exe" size="195072">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Mainpaint.exe" size="157696">
       <assemblyIdentity name="Mainpaint" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>ti6ITs5IyfxszOuo20FcxlrI7Ws=</dsig:DigestValue>
+        <dsig:DigestValue>AW1IVOhnzHt3b9dgepmik7FwQbA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

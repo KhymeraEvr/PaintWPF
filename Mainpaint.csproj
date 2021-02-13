@@ -75,161 +75,98 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BalanceWindow.cs">
+    <Compile Include="Tools\BalanceWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BalanceWindow.Designer.cs" />
-    <Compile Include="Bitonal.cs">
+    <Compile Include="Tools\BalanceWindow.Designer.cs" />
+    <Compile Include="Tools\Bitonal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bitonal.Designer.cs" />
-    <Compile Include="Brightness_Contrast.cs">
+    <Compile Include="Tools\Bitonal.Designer.cs" />
+    <Compile Include="Tools\Brightness_Contrast.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Brightness_Contrast.Designer.cs" />
-    <Compile Include="CartoonFilter.cs">
+    <Compile Include="Tools\Brightness_Contrast.Designer.cs" />
+    <Compile Include="Tools\ColorPicker.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CartoonFilter.Designer.cs" />
-    <Compile Include="ColorPicker.cs">
+    <Compile Include="Tools\ColorPicker.Designer.cs" />
+    <Compile Include="Tools\Effects.cs" />
+    <Compile Include="Tools\ErodeFilter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ColorPicker.Designer.cs" />
-    <Compile Include="Effects.cs" />
-    <Compile Include="ErodeFilter.cs">
+    <Compile Include="Tools\ErodeFilter.Designer.cs" />
+    <Compile Include="Tools\gamma.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ErodeFilter.Designer.cs" />
-    <Compile Include="gamma.cs">
+    <Compile Include="Tools\gamma.Designer.cs" />
+    <Compile Include="Tools\layerRename.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="gamma.Designer.cs" />
-    <Compile Include="Gaussian.cs">
+    <Compile Include="Tools\layerRename.Designer.cs" />
+    <Compile Include="Tools\Median.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gaussian.Designer.cs" />
-    <Compile Include="GradientColorPicker.cs">
+    <Compile Include="Tools\Median.Designer.cs" />
+    <Compile Include="Tools\new layer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GradientColorPicker.Designer.cs">
-      <DependentUpon>GradientColorPicker.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GradientDetect.cs">
+    <Compile Include="Tools\new layer.Designer.cs" />
+    <Compile Include="Tools\new_window.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GradientDetect.Designer.cs" />
-    <Compile Include="jitter.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="jitter.Designer.cs" />
-    <Compile Include="layerRename.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="layerRename.Designer.cs" />
-    <Compile Include="Median.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Median.Designer.cs" />
-    <Compile Include="new layer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="new layer.Designer.cs" />
-    <Compile Include="new_window.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="new_window.Designer.cs">
+    <Compile Include="Tools\new_window.Designer.cs">
       <DependentUpon>new_window.cs</DependentUpon>
     </Compile>
-    <Compile Include="Noise.cs">
+    <Compile Include="Other\CustomControls.cs" />
+    <Compile Include="Tools\DrawingSpace.cs" />
+    <Compile Include="Tools\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Noise.Designer.cs" />
-    <Compile Include="OilPaint.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OilPaint.Designer.cs" />
-    <Compile Include="Other\CustomControls.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="DrawingSpace.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Tools\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Other\GradientColor.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Other\GradientColor.cs" />
     <Compile Include="Other\GradientColor.Designer.cs">
       <DependentUpon>GradientColor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Other\GradientColorHolder.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Other\GradientColorHolder.cs" />
     <Compile Include="Other\GradientColorHolder.Designer.cs">
       <DependentUpon>GradientColorHolder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Other\infoForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Other\infoForm.cs" />
     <Compile Include="Other\infoForm.Designer.cs">
       <DependentUpon>infoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Other\LayerContainer.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Other\LayerContainer.cs" />
     <Compile Include="Other\LayerContainer.Designer.cs">
       <DependentUpon>LayerContainer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Other\LayerRow.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Other\LayerRow.cs" />
     <Compile Include="Other\LayerRow.Designer.cs">
       <DependentUpon>LayerRow.cs</DependentUpon>
     </Compile>
-    <Compile Include="misc.cs" />
-    <Compile Include="Pixelate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pixelate.Designer.cs" />
-    <Compile Include="PixelDistort.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PixelDistort.Designer.cs" />
+    <Compile Include="Tools\misc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StainedGlass.cs">
+    <Compile Include="Tools\TextInputBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StainedGlass.Designer.cs" />
-    <Compile Include="TextInputBox.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TextInputBox.Designer.cs" />
-    <EmbeddedResource Include="BalanceWindow.resx" />
-    <EmbeddedResource Include="Bitonal.resx" />
-    <EmbeddedResource Include="Brightness_Contrast.resx" />
-    <EmbeddedResource Include="CartoonFilter.resx" />
-    <EmbeddedResource Include="ErodeFilter.resx" />
-    <EmbeddedResource Include="Form1.resx">
+    <Compile Include="Tools\TextInputBox.Designer.cs" />
+    <EmbeddedResource Include="Tools\BalanceWindow.resx" />
+    <EmbeddedResource Include="Tools\Bitonal.resx" />
+    <EmbeddedResource Include="Tools\Brightness_Contrast.resx" />
+    <EmbeddedResource Include="Tools\ErodeFilter.resx" />
+    <EmbeddedResource Include="Tools\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="gamma.resx" />
-    <EmbeddedResource Include="Gaussian.resx" />
-    <EmbeddedResource Include="GradientColorPicker.resx">
-      <DependentUpon>GradientColorPicker.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GradientDetect.resx" />
-    <EmbeddedResource Include="jitter.resx" />
-    <EmbeddedResource Include="layerRename.resx" />
-    <EmbeddedResource Include="Median.resx" />
-    <EmbeddedResource Include="new layer.resx" />
-    <EmbeddedResource Include="new_window.resx">
+    <EmbeddedResource Include="Tools\gamma.resx" />
+    <EmbeddedResource Include="Tools\layerRename.resx" />
+    <EmbeddedResource Include="Tools\Median.resx" />
+    <EmbeddedResource Include="Tools\new layer.resx" />
+    <EmbeddedResource Include="Tools\new_window.resx">
       <DependentUpon>new_window.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Noise.resx" />
-    <EmbeddedResource Include="OilPaint.resx" />
     <EmbeddedResource Include="Other\GradientColor.resx">
       <DependentUpon>GradientColor.cs</DependentUpon>
     </EmbeddedResource>
@@ -245,8 +182,6 @@
     <EmbeddedResource Include="Other\LayerRow.resx">
       <DependentUpon>LayerRow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pixelate.resx" />
-    <EmbeddedResource Include="PixelDistort.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -257,9 +192,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="StainedGlass.resx" />
-    <EmbeddedResource Include="TextInputBox.resx" />
-    <None Include="Mainpaint_TemporaryKey.pfx" />
+    <EmbeddedResource Include="Tools\TextInputBox.resx" />
+    <None Include="Tools\Mainpaint_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
